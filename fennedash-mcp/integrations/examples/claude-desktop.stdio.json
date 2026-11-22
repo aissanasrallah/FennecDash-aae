@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "fennedash": {
+      "command": "node",
+      "args": [
+        "C:/path/to/fennedash-mcp/dist/src/index.js",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "FENNEDASH_BASE_URL": "https://crm.example.com",
+        "FENNEDASH_API_TOKEN": "fdm_REPLACE_WITH_TOKEN",
+        "MCP_ALLOW_WRITE": "false",
+        "MCP_ALLOW_CRITICAL": "false"
+      }
+    }
+  }
+}

@@ -1,0 +1,193 @@
+/* =====================================================================
+ * AAE Import Manager - styles module (admin)
+ * ===================================================================== */
+
+/* ---------- Badges statuts (version-proof, pas de .badge BS5) --------- */
+.aae-badge {
+    display: inline-block;
+    padding: .28em .55em;
+    font-size: 76%;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 4px;
+    color: #fff;
+}
+.aae-badge .fa { font-size: 9px; vertical-align: 1px; opacity: .95; }
+
+/* ---------- Statistiques tableau de bord ----------------------------- */
+.aae-stat .panel-body {
+    display: flex;
+    align-items: center;
+    min-height: 88px;
+}
+.aae-stat-icon {
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+    line-height: 46px;
+    margin-right: 14px;
+}
+.aae-stat-body { min-width: 0; }
+.aae-stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.15;
+    word-break: break-word;
+}
+.aae-stat-label {
+    color: #889;
+    font-size: 12px;
+    margin-top: 2px;
+}
+.aae-stat-actions .panel-body { flex-direction: column; align-items: stretch; }
+.aae-legend { margin-top: 18px; }
+.aae-legend-row { padding: 3px 0; }
+.aae-notice { margin-bottom: 18px; }
+
+/* ---------- Tableaux -------------------------------------------------- */
+table.aae-table th {
+    white-space: nowrap;
+    font-weight: 600;
+}
+table.aae-table td { vertical-align: middle !important; }
+.aae-inline-form { display: inline-block; }
+.aae-money { font-variant-numeric: tabular-nums; }
+
+/* ---------- Filtres catalogue ----------------------------------------- */
+.aae-filters { margin-bottom: 16px; }
+@media (max-width: 991px) {
+    .aae-filters .col-md-3,
+    .aae-filters .col-md-4,
+    .aae-filters .col-md-2 { margin-bottom: 8px; }
+}
+
+/* ---------- Modal formulaire vehicule --------------------------------- */
+.aae-block {
+    border: 1px solid #e7e9ed;
+    border-radius: 8px;
+    padding: 16px 16px 10px 16px;
+    margin: 16px 0 8px 0;
+    background: #fcfdfe;
+}
+.aae-preview {
+    background: #f7f9fb;
+    border: 1px dashed #c8cfd8;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 6px;
+}
+.aae-preview-line { display: inline-block; margin-right: 18px; }
+
+/* ---------- Operations : vue liste ------------------------------------- */
+.aae-status-pills .aae-status-pill {
+    display: inline-block;
+    border: 1px solid #dfe2e6;
+    border-radius: 30px;
+    padding: 4px 14px;
+    margin: 0 6px 8px 0;
+    font-size: 12.5px;
+    color: #444;
+    background: #fff;
+    text-decoration: none;
+}
+.aae-status-pill:hover { text-decoration: none; border-color: #b9c2cc; }
+.aae-status-pill.active { font-weight: 600; }
+
+/* ---------- Operations : vue kanban ------------------------------------- */
+.aae-kanban-wrap { overflow-x: auto; }
+.aae-kanban {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding-bottom: 10px;
+    min-width: max-content;
+}
+.aae-kanban-col {
+    flex: 0 0 250px;
+    width: 250px;
+    background: #f4f6f9;
+    border-radius: 10px;
+    padding: 12px;
+}
+.aae-kanban-colhead {
+    padding: 6px 2px 10px 2px;
+    font-size: 13px;
+}
+.aae-kanban-colhead .aae-count {
+    font-size: 11px;
+    background: #e3e7ec;
+    border-radius: 10px;
+    padding: 1px 9px;
+    color: #555;
+}
+.aae-kanban-card {
+    display: block;
+    background: #fff;
+    border: 1px solid #e4e7eb;
+    border-left: 4px solid transparent;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.aae-kanban-card:hover { text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,.09); }
+.aae-kanban-ref { font-size: 12.5px; color: #333; }
+.aae-kanban-veh { font-size: 13.5px; font-weight: 600; margin: 2px 0 4px 0; }
+.aae-kanban-meta { display: block; color: #8a92a0; font-size: 12px; }
+.aae-kanban-margin { font-size: 12.5px; font-weight: 600; }
+
+/* ---------- Operation detail ------------------------------------------- */
+.aae-detail-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dotted #eceff3;
+}
+.aae-detail-line:last-of-type { border-bottom: none; }
+.aae-detail-label { color: #8a92a0; }
+.aae-pipeline-step {
+    text-align: center;
+    padding: 14px 6px;
+    border: 1px solid #eceef1;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    color: #98a0ab;
+}
+.aae-pipeline-step i { font-size: 17px; display: block; margin-bottom: 8px; }
+.aae-pipeline-step .aae-pipeline-label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .4px; }
+.aae-pipeline-step .aae-pipeline-date { font-size: 13px; min-height: 16px; font-weight: 600; color: #333; margin-top: 3px; }
+.aae-pipeline-step.done { background: #f6fbff; border-color: #cfe7ff; color: #3877b4; }
+.aae-pipeline-step.current { background: #eff8ff; border-color: #8fc3f4; color: #1b6bbd; box-shadow: 0 0 0 2px rgba(27,107,189,.12); }
+.aae-notes { padding: 10px 0 0 0; color: #444; }
+.aae-history {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.aae-history li {
+    position: relative;
+    padding: 8px 0 8px 26px;
+    border-left: 2px solid #e9ecf1;
+    margin-left: 10px;
+}
+.aae-history li::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c3cad4;
+}
+.aae-history li:last-child { border-left-color: transparent; }
+.aae-history-note { color: #666; margin-top: 4px; padding-left: 2px; }

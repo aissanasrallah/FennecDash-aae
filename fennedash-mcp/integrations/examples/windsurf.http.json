@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "fennedash": {
+      "serverUrl": "https://mcp.example.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:FENNEDASH_API_TOKEN}"
+      }
+    }
+  }
+}

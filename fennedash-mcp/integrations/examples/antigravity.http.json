@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "fennedash": {
+      "serverUrl": "https://mcp.example.com/mcp",
+      "headers": {
+        "Authorization": "Bearer fdm_REPLACE_WITH_TOKEN"
+      },
+      "timeoutSeconds": 120
+    }
+  }
+}

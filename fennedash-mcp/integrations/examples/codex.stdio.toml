@@ -1,0 +1,10 @@
+[mcp_servers.fennedash]
+command = "node"
+args = ["C:/path/to/fennedash-mcp/dist/src/index.js", "--transport", "stdio"]
+env_vars = ["FENNEDASH_BASE_URL", "FENNEDASH_API_TOKEN"]
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+
+[mcp_servers.fennedash.env]
+MCP_ALLOW_WRITE = "false"
+MCP_ALLOW_CRITICAL = "false"

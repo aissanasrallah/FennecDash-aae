@@ -1,0 +1,50 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
+# Version 1.0.0
+
+$lang['quick_share'] = 'مشاركة سريعة';
+$lang['quick_share_upload_title'] = 'QuickShare - رفع ملف';
+$lang['upload_file'] = 'رفع ملف';
+$lang['enable_self_destruct_label'] = 'تمكين التدمير الذاتي؟';
+$lang['enable_self_destruct_tooltip'] = 'سيتم تدمير الملف المرفوع تلقائيًا بعد أول تنزيل له';
+$lang['share_link_type_label'] = 'كيف تريد مشاركة الملف؟';
+$lang['share_link_type_tooltip'] = 'يمكنك مشاركة الملف المرفوع عن طريق البريد الإلكتروني بحيث يتلقى المستلمون بريدًا إلكترونيًا، أو المشاركة عبر رابط ونسخ الرابط ومشاركته مع من تشاء.';
+$lang['qs_send_using_email'] = 'الإرسال عبر البريد الإلكتروني';
+$lang['qs_get_sharable_link'] = 'الحصول على رابط للمشاركة';
+$lang['qs_attach_file_placeholder'] = 'إرفاق ملف';
+$lang['qs_start_upload'] = 'بدء الرفع';
+$lang['qs_send_to_emails'] = 'الإرسال إلى عناوين بريد إلكتروني';
+$lang['qs_protect_file_with_password_label'] = 'حماية الملف المرفوع بكلمة مرور';
+$lang['qs_protect_file_with_password_tooltip'] = 'لا يمكن تنزيل الملف المرفوع إلا بعد إدخال كلمة المرور.';
+$lang['qs_protect_email_list_tooltip'] = 'يمكنك إرسال الرابط إلى عدة عناوين بريد إلكتروني، فقط افصل بينها بـ ",".';
+$lang['qs_table_file_path'] = 'مسار الملف';
+$lang['qs_table_file_size'] = 'حجم الملف';
+$lang['qs_table_file_status'] = 'حالة الملف';
+$lang['qs_table_file_created_at'] = 'تاريخ الإنشاء';
+$lang['qs_table_file_auto_destroy'] = 'التدمير التلقائي';
+$lang['qs_table_file_has_password'] = 'محمي بكلمة مرور';
+$lang['qs_table_file_total_downloads'] = 'إجمالي التنزيلات';
+$lang['qs_table_file_share_type'] = 'نوع المشاركة';
+$lang['qs_downloads_table_downloaded_file'] = 'الملف المنزّل';
+$lang['qs_downloads_table_download_ip'] = 'عنوان IP للتنزيل';
+$lang['qs_permission_view_downloads'] = 'عرض التنزيلات';
+$lang['qs_permission_manage_downloads'] = 'إدارة التنزيلات';
+$lang['qs_view_downloads_title'] = 'QuickShare - عرض التنزيلات';
+$lang['qs_file_share_type_email'] = 'البريد الإلكتروني';
+$lang['qs_file_share_type_link'] = 'الرابط';
+$lang['qs_menu_view_list'] = 'قائمة الملفات';
+$lang['qs_menu_upload_file'] = 'رفع ملف';
+$lang['qs_menu_settings'] = 'الإعدادات';
+$lang['qs_settings_maximum_kb_size'] = 'الحد الأقصى لحجم الرفع (بالكيلوبايت)';
+$lang['qs_file_destroyed_message'] = 'الملف الذي تحاول تنزيله في وضع التدمير التلقائي وقد تم تنزيله بالفعل. إذا كنت بحاجة إلى مساعدة إضافية، فيرجى التواصل مع فريق الدعم لدينا. شكرًا لتفهمك.';
+$lang['qs_file_maximum_size'] = 'تعذر إرفاق الملف لأنه تجاوز الحد الأقصى لحجم الملف، فيرجى ضبط حجم الملف من Quickshare->Settings';
+$lang['qs_settings_allowed_file_extensions'] = 'امتدادات الملفات المسموح بها';
+$lang['qs_settings_allowed_file_extensions_err'] = 'الملف الذي تحاول رفعه ليس من امتداد مدعوم، فيرجى ضبط الامتدادات المسموح بها من Quickshare->Settings';
+$lang['qs_settings_selected_storage_engine'] = 'محرك التخزين';
+$lang['qs_settings_selected_storage_engine_1'] = 'الخادم';
+$lang['qs_settings_selected_storage_engine_2'] = 'تخزين Amazon S3';
+$lang['qs_settings_aws_key'] = 'مفتاح AWS';
+$lang['qs_settings_aws_secret'] = 'المفتاح السري لـ AWS';
+$lang['qs_settings_aws_bucket'] = 'حاوية AWS';
+$lang['qs_settings_aws_region'] = 'منطقة AWS';

@@ -1,0 +1,32 @@
+/* FennecDash Responsive Fix */
+@media (max-width: 768px) {
+  #header {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000;
+    top: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  #wrapper {
+    margin-left: 0 !important;
+  }
+  .sidebar {
+    display: none !important;
+  }
+  .content {
+    padding: 10px !important;
+    padding-top: 70px !important;
+  }
+  .hide-menu {
+    display: flex !important;
+  }
+  .sidebar-toggle-mobile {
+    display: inline-flex !important;
+  }
+  body.hide-sidebar #header,
+  body.page-small #header {
+    left: 0 !important;
+  }
+}

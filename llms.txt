@@ -1,0 +1,31 @@
+# Fennec Dash - All-in-One Business Platform
+> CRM · ERP · CMS · MAP · PIM (21 integrated modules)
+
+Fennec Dash is a comprehensive business management platform for the Algerian and international market. Self-hosted, one-time license purchase, compliant with Law 18-07.
+
+## Key Entities
+
+- Fennec Dash (Product): Business application platform with 21 modules
+- Fennec Vision: The publisher / development company
+- Modules: Purchase, E-Invoice, Accounting, Exports, Goals, Logistic, Manufacturing, Warehouse, Warranty Management, HR Profile, Surveys, Quick Share, Report Builder, Backup, Menu Setup, Theme Style, AI Integration, Real Estate, Meta Leads, Fleet Management, Marketing Management
+- Compliance: Law 18-07 (Algerian data sovereignty), ISO/IEC 27001, ISO 9001, GDPR
+- Stack: PHP 8, MySQL, CodeIgniter 3
+
+## Links
+
+- Home: https://dash.fennec-vision.com/
+- English: https://dash.fennec-vision.com/landing/en
+- Français: https://dash.fennec-vision.com/landing/fr
+- العربية: https://dash.fennec-vision.com/landing/ar
+- Knowledge Base: https://dash.fennec-vision.com/knowledge-base
+- Privacy Policy: https://dash.fennec-vision.com/privacy-policy
+- Terms & Conditions: https://dash.fennec-vision.com/terms-and-conditions
+- Client Login: https://dash.fennec-vision.com/login
+- Admin Login: https://dash.fennec-vision.com/admin/authentication
+
+## Features
+- Self-hosted, on-premise deployment
+- One-time license fee, no subscriptions
+- Light and dark adaptive themes
+- 24/7 support, direct developer access
+- Fully customizable UI

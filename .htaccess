@@ -1,0 +1,85 @@
+AddDefaultCharset utf-8
+
+# ──────────────────────────────────────────────────────────────────────
+# SECURITY HEADERS
+# ──────────────────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+    # HSTS — force HTTPS (adjust max-age for production)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+
+    # Prevent MIME-type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Enable XSS filter in older browsers
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions policy — restrict API access
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)"
+
+    # Content Security Policy (CSP) — relaxed for CRM admin; tighten in production
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.pusher.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://*.cloudflare.com https://accounts.google.com https://apis.google.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdn.tailwindcss.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; img-src 'self' data: blob: https:; frame-src 'self' https://www.google.com https://docs.google.com; connect-src 'self' https://*.pusher.com wss://*.pusher.com ws://localhost:* http://localhost:* https://accounts.google.com https://cdn.jsdelivr.net https://fonts.gstatic.com https://fonts.googleapis.com; object-src 'none'; base-uri 'self'; form-action 'self'"
+
+    # Cache-Control for sensitive pages (default for dynamic PHP/HTML responses)
+    Header always set Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+
+    # Override Cache-Control for immutable static assets (CSS, JS, fonts, images)
+    <FilesMatch "\.(css|js|mjs|png|jpe?g|gif|webp|svg|ico|woff2?|ttf|eot)$">
+        Header always unset Pragma
+        Header always unset Expires
+        Header always set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+# ──────────────────────────────────────────────────────────────────────
+# HTTP RESPONSE COMPRESSION (GZIP / BROTLI)
+# ──────────────────────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript text/javascript application/x-javascript application/json image/svg+xml font/ttf font/otf application/vnd.ms-fontobject
+</IfModule>
+
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript text/javascript application/x-javascript application/json image/svg+xml font/ttf font/otf application/vnd.ms-fontobject
+</IfModule>
+
+# ──────────────────────────────────────────────────────────────────────
+# BLOCK SENSITIVE FILES
+# ──────────────────────────────────────────────────────────────────────
+<FilesMatch "(^\.|\.env|composer\.json|composer\.lock|package\.json|package-lock\.json|webpack\.mix\.js|tailwind\.config\.js|app-config\.php|\.sql|\.md|nginx\.conf)">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+
+    # Block access to hidden files and directories
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+
+    # Block access to sensitive folders via URL
+    RewriteRule ^(application|system|modules/.*/config|modules/.*/views) - [F,L]
+
+    # Standard CI routing
+    RewriteCond $1 !^(index\.php|resources|robots\.txt|favicon\.ico|assets)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
+</IfModule>
+
+# ──────────────────────────────────────────────────────────────────────
+# DIRECTORY LISTING PROTECTION
+# ──────────────────────────────────────────────────────────────────────
+Options -Indexes
+
+# ──────────────────────────────────────────────────────────────────────
+# SERVER SIGNATURE
+# ──────────────────────────────────────────────────────────────────────
+ServerSignature Off

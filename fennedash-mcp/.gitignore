@@ -1,0 +1,21 @@
+# Install output (npm install downloads these; never commit them)
+node_modules/
+
+# Compiled output
+dist/
+*.tsbuildinfo
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Runtime state
+logs/
+coverage/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~

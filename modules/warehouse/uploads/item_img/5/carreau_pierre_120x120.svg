@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c4beb2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7a756b;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="8" fill="url(#bg)"/>
+  <rect x="15" y="15" width="170" height="170" rx="4" fill="none" stroke="#a0998c" stroke-width="2" opacity="0.5"/>
+  <rect x="25" y="25" width="150" height="150" rx="2" fill="#a0998c" opacity="0.3"/>
+  <text x="100" y="100" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#a0998c" text-anchor="middle" dominant-baseline="central">Carreau Pierre 120Ã—120</text>
+  <text x="100" y="140" font-family="Arial,sans-serif" font-size="11" fill="#7a756b" text-anchor="middle">SKU-5</text>
+</svg>

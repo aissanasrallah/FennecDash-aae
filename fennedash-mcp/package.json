@@ -1,0 +1,45 @@
+{
+  "name": "fennedash-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Model Context Protocol server exposing FennecDash CRM capabilities to AI agents",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bin": {
+    "fennedash-mcp": "dist/src/index.js"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "integrations",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts --transport stdio",
+    "dev:http": "tsx src/index.ts --transport http",
+    "start": "node dist/src/index.js",
+    "start:http": "node dist/src/index.js --transport http",
+    "test": "vitest run",
+    "pretest": "npm run build",
+    "test:watch": "vitest",
+    "test:integration": "vitest run tests/integration",
+    "inspector": "npx @modelcontextprotocol/inspector node dist/src/index.js",
+    "mcp:doctor": "tsx scripts/doctor.ts",
+    "docs:catalog": "tsx scripts/generate-catalog.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "dotenv": "^17.2.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  }
+}

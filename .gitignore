@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# FennecDash — Git ignore rules
+# ---------------------------------------------------------------------------
+
+# Dependencies and build caches
+/node_modules/
+/.opencode/
+/.claude/
+/.idea/
+/.vscode/
+/.sass-cache/
+/.parcel-cache/
+
+# Environment / secrets — never commit real credentials
+.env
+.env.*
+!.env.example
+
+# Local runtime data
+/backups/
+/sessions/
+
+# Uploaded customer files: keep the security placeholders and company brand logos, ignore customer uploads
+/uploads/**
+!/uploads/**/
+!/uploads/**/.htaccess
+!/uploads/**/index.html
+!/uploads/company/*.png
+
+# Runtime media and temporary files
+/media/**
+!/media/**/
+!/media/**/index.html
+/temp/**
+!/temp/**/
+!/temp/**/index.html
+
+# Logs and cache
+/application/logs/*
+!/application/logs/index.html
+/application/cache/*
+!/application/cache/.htaccess
+!/application/cache/index.html
+
+# Local diagnostics and scratch files
+/cookies.txt
+/headers.txt
+/headers_status.txt
+/response.html
+/sample.txt
+/check_all_lang.php
+/check_keys.php
+
+# Graphify analysis output — keep the report and graph, skip regenerable caches
+/graphify-out/cache/
+/graphify-out/converted/
+/graphify-out/.graphify_python
+/graphify-out/.graphify_root
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~

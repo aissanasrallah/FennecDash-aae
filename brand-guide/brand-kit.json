@@ -1,0 +1,119 @@
+{
+  "name": "Fennec Dash",
+  "company": "Fennec Vision",
+  "domain": "dash.fennec-vision.com",
+  "version": "Brand Guide v1.0",
+  "issued": "2026-10-27",
+  "category": "CRM • ERP • CMS • MAP • PIM — All-in-One Business Platform",
+  "shortLine": "One Platform, All Tools.",
+  "description": "Fennec Dash is a self-hosted business platform with 21 integrated modules covering CRM, ERP, HR, finance, logistics and marketing. Built on PHP 8 and MySQL, it is designed for Algerian compliance, priced in DZD, and available in English, French and Arabic.",
+  "colors": {
+    "balance": "70% neutral / 20% purple / 10% gold",
+    "brand": {
+      "primary": { "hex": "#6B21A8", "name": "Fennec Purple", "use": "Primary actions, links, table headers, active navigation" },
+      "primaryHover": { "hex": "#581C87", "use": "Hover and pressed state of primary" },
+      "primaryDarkUi": { "hex": "#8B5CF6", "use": "Dark-mode primary for icons, borders and large type only" },
+      "accent": { "hex": "#F9BC3B", "name": "Fennec Gold", "use": "Accent, badges, highlights, focus moments; one CTA at most" },
+      "accentText": { "hex": "#000000", "use": "Always black on gold" },
+      "goldDark": { "hex": "#D97706", "use": "Gold-toned text on white — large only" },
+      "logoGold": { "hex": "#FAC259", "use": "Lockup artwork only, never a UI token" }
+    },
+    "neutrals": {
+      "ink": "#1F1F1F",
+      "muted": "#6B7280",
+      "border": "#E5E7EB",
+      "canvas": "#F7F7F9",
+      "surface": "#FFFFFF",
+      "inputBorder": "#D1D5DB"
+    },
+    "darkMode": {
+      "canvas": "#121212",
+      "surface": "#1A1A1A",
+      "card": "#2D2D2D",
+      "sidebar": "#0A0A0A",
+      "border": "#404040",
+      "text": "#F5F5F5",
+      "muted": "#9CA3AF",
+      "inputBorder": "#555555",
+      "focusRing": "#C084FC",
+      "marketingDark": "#0F0F12",
+      "marketingCard": "#1E1E2D"
+    },
+    "semantic": {
+      "success": "#16A34A",
+      "successBadge": "#15803D",
+      "warning": "#F59E0B",
+      "danger": "#DC2626",
+      "info": "#0EA5E9",
+      "infoBadge": "#0369A1"
+    }
+  },
+  "fonts": {
+    "display": {
+      "family": "Plus Jakarta Sans",
+      "weights": [400, 500, 600, 700, 800],
+      "use": "Landing page, decks, ads, trade-show panels, document covers",
+      "tracking": "-0.02 to -0.045em above 36px, 0 below",
+      "source": "Google Fonts, display=swap",
+      "file": "fonts/PlusJakartaSans-var.woff2",
+      "never": "Below 14px, inside a table, or in a form"
+    },
+    "text": {
+      "family": "Inter",
+      "weights": [400, 500, 600, 700],
+      "use": "Admin screens, forms, tables, modals, client portal, email",
+      "baseSize": "13.5px / 0.84375rem",
+      "figures": "tabular-nums",
+      "file": "fonts/Inter-var.woff2",
+      "never": "Marketing headlines"
+    },
+    "fallback": "system-ui, \"Segoe UI\", sans-serif",
+    "maxWeightsPerScreen": 3
+  },
+  "logos": {
+    "primary": { "file": "assets/logo-dark.png", "size": "675x218", "use": "White and #F7F7F9 backgrounds" },
+    "reversed": { "file": "assets/logo-light.png", "size": "675x218", "use": "#0F0F12 to #1A1A1A only" },
+    "mark": { "file": "assets/mark.png", "size": "167x187", "use": "Specimen only, not a master file" },
+    "ratio": "3.0963:1",
+    "ink": "Logo gold #FAC259, Fennec purple #6B21A8, ink #231F20 (or white reversed)",
+    "rules": [
+      "Use the supplied file at its supplied proportions on an approved background.",
+      "Never rebuild, recolor or set the lockup in type.",
+      "No vector master exists; do not scale beyond 110mm in print."
+    ]
+  },
+  "voice": {
+    "traits": ["Direct", "Practical", "Assured", "Local"],
+    "rules": [
+      "Second person, active voice; subject is the customer or the software.",
+      "One claim per sentence; prefer a number to an adjective.",
+      "Marketing sentences under 20 words; one CTA per section.",
+      "Never apologise for the market: Law 18-07, DZD, Arabic and French are features."
+    ],
+    "bannedWords": ["revolutionary", "cutting-edge", "seamless", "synergy", "best-in-class", "empower", "unleash"],
+    "toneBySurface": {
+      "marketing": "Benefit, then proof. No unverified metrics.",
+      "productUi": "The next action. Instructional, no personality, no jokes.",
+      "errors": "What happened, never blame the user, always state the fix.",
+      "support": "First person, named agent, specific next step and time.",
+      "sales": "Scope and numbers. No urgency theatre or fake scarcity."
+    }
+  },
+  "claims": {
+    "verified": ["21 integrated modules"],
+    "doNotPublish": [
+      "50K+ active users",
+      "2,500+ companies trust us",
+      "99.9% uptime guaranteed",
+      "Lifetime updates"
+    ],
+    "conditional": ["100+ active companies — only with a dated source and a named reviewer"]
+  },
+  "rules": [
+    "One purple primary button per view or card.",
+    "Never set body copy in gold (#F9BC3B is 1.71:1 on white).",
+    "No hex value outside this guide; tints come from rgba() at 4, 8, 10, 15 or 20%.",
+    "8px spacing grid; one shadow per surface; soft edges.",
+    "Components consume tokens, never raw hex."
+  ]
+}

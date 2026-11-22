@@ -1,0 +1,1477 @@
+/*!
+ * fennec-icons.css — Font Awesome → Tabler Icons CSS-only replacement
+ *
+ * Replaces every Font Awesome 4/6 icon class in Fennec Dash with its Tabler
+ * Icons webfont equivalent using font-family + content overrides.
+ *
+ * Codepoints extracted from Tabler Icons 3.44.0 via
+ *   @tabler/icons-webfont  —  https://tabler.io/icons
+ *
+ * Author: Fennec Vision (https://www.fennec-vision.com)
+ */
+
+/* Tabler Icons base stylesheet is loaded directly in head.php to avoid @import waterfall */
+
+/* ── Base class overrides ─────────────────────────────────────── */
+
+.fa,
+.fas,
+.far,
+.fab,
+.fa-regular,
+.fa-solid,
+.fa-brands,
+.fal,
+.fat,
+.fad {
+  font-family: 'tabler-icons' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal !important;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+/* Normalise sizing */
+.fa,
+.fas,
+.far,
+.fab,
+.fa-lg,
+.fa-2x,
+.fa-3x,
+.fa-4x,
+.fa-5x {
+  vertical-align: middle;
+}
+
+/* ── Content mapping ──────────────────────────────────────────── */
+
+/*
+ * CATCH-ALL FALLBACK: any FA icon class not explicitly mapped below
+ * gets a generic ti-file icon.  This prevents FA4/6 codepoints from
+ * rendering as wrong glyphs through the Tabler font.  Explicit mappings
+ * that follow override this rule by cascade order (same specificity).
+ */
+[class*=" fa-"]::before {
+  content: "\eaa4" !important; /* ti-file (generic fallback) */
+}
+
+/* ===== Navigation ===== */
+
+.fa-dashboard::before,
+.fa.fa-dashboard::before,
+.fa-home::before,
+.fa.fa-home::before {
+  content: "\f02c" !important; /* ti-layout-dashboard */
+}
+
+.fa-angle-left::before,
+.fa.fa-angle-left::before {
+  content: "\ea60" !important; /* ti-chevron-left */
+}
+
+.fa-angle-right::before,
+.fa.fa-angle-right::before {
+  content: "\ea61" !important; /* ti-chevron-right */
+}
+
+.fa-angle-double-left::before,
+.fa.fa-angle-double-left::before {
+  content: "\ea64" !important; /* ti-chevrons-left */
+}
+
+.fa-angle-double-right::before,
+.fa.fa-angle-double-right::before {
+  content: "\ea65" !important; /* ti-chevrons-right */
+}
+
+.fa-angle-down::before,
+.fa.fa-angle-down::before,
+.fa-chevron-down::before,
+.fa.fa-chevron-down::before,
+.fa-solid.fa-chevron-down::before {
+  content: "\ea5f" !important; /* ti-chevron-down */
+}
+
+.fa-caret-down::before,
+.fa.fa-caret-down::before,
+.fa-sort-down::before,
+.fa.fa-sort-down::before,
+.fa-sort-desc::before,
+.fa.fa-sort-desc::before {
+  content: "\eb27" !important; /* ti-sort-descending */
+}
+
+.fa-sort::before,
+.fa.fa-sort::before,
+.fa-sort-asc::before,
+.fa.fa-sort-asc::before,
+.fa-sort-amount-asc::before,
+.fa.fa-sort-amount-asc::before {
+  content: "\eb26" !important; /* ti-sort-ascending */
+}
+
+.fa-sort-amount-desc::before,
+.fa.fa-sort-amount-desc::before {
+  content: "\eb27" !important; /* ti-sort-descending */
+}
+
+/* ===== UI Actions ===== */
+
+.fa-times::before,
+.fa.fa-times::before,
+.fa-remove::before,
+.fa.fa-remove::before,
+.fa-close::before,
+.fa.fa-close::before,
+.fa-solid.fa-xmark::before {
+  content: "\eb55" !important; /* ti-x */
+}
+
+.fa-plus::before,
+.fa.fa-plus::before,
+.fa-regular.fa-plus::before,
+.fa-solid.fa-plus::before,
+.fa-plus-circle::before,
+.fa.fa-plus-circle::before {
+  content: "\eb0b" !important; /* ti-plus */
+}
+
+.fa-plus-square::before,
+.fa.fa-plus-square::before,
+.fa-plus-square-o::before,
+.fa.fa-plus-square-o::before,
+.fa-regular.fa-square-plus::before {
+  content: "\eb2a" !important; /* ti-square-plus */
+}
+
+.fa-check::before,
+.fa.fa-check::before {
+  content: "\ea5e" !important; /* ti-check */
+}
+
+.fa-check-circle::before,
+.fa.fa-check-circle::before,
+.fa-check-circle-o::before,
+.fa.fa-check-circle-o::before,
+.fa-regular.fa-circle-check::before {
+  content: "\ea67" !important; /* ti-circle-check */
+}
+
+.fa-check-square::before,
+.fa.fa-check-square::before,
+.fa-check-square-o::before,
+.fa.fa-check-square-o::before,
+.fa-regular.fa-square-check::before {
+  content: "\eb28" !important; /* ti-square-check */
+}
+
+.fa-circle::before,
+.fa.fa-circle::before,
+.fa-regular.fa-circle::before {
+  content: "\ea6b" !important; /* ti-circle */
+}
+
+.fa-square-o::before,
+.fa.fa-square-o::before,
+.fa-regular.fa-square::before {
+  content: "\eb2c" !important; /* ti-square */
+}
+
+.fa-ban::before,
+.fa.fa-ban::before,
+.fa-solid.fa-ban::before {
+  content: "\ea2e" !important; /* ti-ban */
+}
+
+.fa-filter::before,
+.fa.fa-filter::before,
+.fa-solid.fa-filter::before {
+  content: "\eaa5" !important; /* ti-filter */
+}
+
+.fa-search::before,
+.fa.fa-search::before,
+.fa-solid.fa-magnifying-glass::before {
+  content: "\eb1c" !important; /* ti-search */
+}
+
+.fa-edit::before,
+.fa.fa-edit::before,
+.fa-pencil::before,
+.fa.fa-pencil::before,
+.fa-pencil-square::before,
+.fa.fa-pencil-square::before,
+.fa-pencil-square-o::before,
+.fa.fa-pencil-square-o::before,
+.fa-pencil-o::before,
+.fa.fa-pencil-o::before,
+.fa-regular.fa-pen-to-square::before {
+  content: "\ea98" !important; /* ti-edit */
+}
+
+.fa-trash::before,
+.fa.fa-trash::before,
+.fa-trash-o::before,
+.fa.fa-trash-o::before,
+.fa-regular.fa-trash-can::before {
+  content: "\eb41" !important; /* ti-trash */
+}
+
+.fa-print::before,
+.fa.fa-print::before,
+.fa-solid.fa-print::before {
+  content: "\eb0e" !important; /* ti-printer */
+}
+
+.fa-paperclip::before,
+.fa.fa-paperclip::before,
+.fa-solid.fa-paperclip::before {
+  content: "\eb02" !important; /* ti-paperclip */
+}
+
+.fa-upload::before,
+.fa.fa-upload::before,
+.fa-solid.fa-upload::before {
+  content: "\eb47" !important; /* ti-upload */
+}
+
+.fa-download::before,
+.fa.fa-download::before,
+.fa-file-download::before,
+.fa.fa-file-download::before,
+.fa-solid.fa-download::before {
+  content: "\ea96" !important; /* ti-download */
+}
+
+.fa-refresh::before,
+.fa.fa-refresh::before {
+  content: "\eb13" !important; /* ti-refresh */
+}
+
+.fa-repeat::before,
+.fa.fa-repeat::before {
+  content: "\eb72" !important; /* ti-repeat */
+}
+
+.fa-external-link::before,
+.fa.fa-external-link::before,
+.fa-external-link-square::before,
+.fa.fa-external-link-square::before,
+.fa-solid.fa-up-right-from-square::before {
+  content: "\ea99" !important; /* ti-external-link */
+}
+
+.fa-reply::before,
+.fa.fa-reply::before,
+.fa-solid.fa-reply::before {
+  content: "\ea0c" !important; /* ti-arrow-back */
+}
+
+.fa-eye::before,
+.fa.fa-eye::before {
+  content: "\ea9a" !important; /* ti-eye */
+}
+
+.fa-lock::before,
+.fa.fa-lock::before {
+  content: "\eae2" !important; /* ti-lock */
+}
+
+.fa-key::before,
+.fa.fa-key::before {
+  content: "\eac7" !important; /* ti-key */
+}
+
+.fa-tag::before,
+.fa.fa-tag::before,
+.fa-tags::before,
+.fa.fa-tags::before {
+  content: "\10096" !important; /* ti-tag */
+}
+
+.fa-star::before,
+.fa.fa-star::before,
+.fa-star-o::before,
+.fa.fa-star-o::before,
+.fa-regular.fa-star::before {
+  content: "\eb2e" !important; /* ti-star */
+}
+
+/* ===== Alerts & Status ===== */
+
+.fa-exclamation-triangle::before,
+.fa.fa-exclamation-triangle::before,
+.fa-warning::before,
+.fa.fa-warning::before {
+  content: "\ea06" !important; /* ti-alert-triangle */
+}
+
+.fa-exclamation::before,
+.fa.fa-exclamation::before {
+  content: "\efb4" !important; /* ti-exclamation-mark */
+}
+
+.fa-info-circle::before,
+.fa.fa-info-circle::before {
+  content: "\eac5" !important; /* ti-info-circle */
+}
+
+.fa-question-circle::before,
+.fa.fa-question-circle::before,
+.fa-question-circle-o::before,
+.fa.fa-question-circle-o::before,
+.fa-regular.fa-circle-question::before,
+.fa-question::before,
+.fa.fa-question::before,
+.fa-solid.fa-question::before {
+  content: "\f91d" !important; /* ti-help-circle */
+}
+
+.fa-circle-exclamation::before,
+.fa-solid.fa-circle-exclamation::before {
+  content: "\ea05" !important; /* ti-alert-circle */
+}
+
+.fa-minus-circle::before,
+.fa.fa-minus-circle::before {
+  content: "\ea68" !important; /* ti-circle-minus */
+}
+
+.fa-times-circle::before,
+.fa.fa-times-circle::before,
+.fa-times-circle-o::before,
+.fa.fa-times-circle-o::before {
+  content: "\ea6a" !important; /* ti-circle-x */
+}
+
+/* ===== Calendar & Time ===== */
+
+.fa-calendar::before,
+.fa.fa-calendar::before,
+.fa-calendar-o::before,
+.fa.fa-calendar-o::before,
+.fa-regular.fa-calendar::before {
+  content: "\ea53" !important; /* ti-calendar */
+}
+
+.fa-calendar-check-o::before,
+.fa.fa-calendar-check-o::before,
+.fa-regular.fa-calendar-check::before {
+  content: "\f824" !important; /* ti-calendar-check */
+}
+
+.fa-clock::before,
+.fa.fa-clock::before,
+.fa-clock-o::before,
+.fa.fa-clock-o::before,
+.fa-regular.fa-clock::before {
+  content: "\ea70" !important; /* ti-clock */
+}
+
+.fa-clock-rotate-left::before,
+.fa-solid.fa-clock-rotate-left::before {
+  content: "\ebea" !important; /* ti-history */
+}
+
+.fa-hourglass::before,
+.fa.fa-hourglass::before,
+.fa-regular.fa-hourglass::before {
+  content: "\ef93" !important; /* ti-hourglass */
+}
+
+/* ===== Business & Finance ===== */
+
+.fa-money::before,
+.fa.fa-money::before,
+.fa-dollar-sign::before,
+.fa-solid.fa-dollar-sign::before {
+  content: "\eb84" !important; /* ti-currency-dollar */
+}
+
+.fa-credit-card::before,
+.fa.fa-credit-card::before {
+  content: "\ea84" !important; /* ti-credit-card */
+}
+
+.fa-briefcase::before,
+.fa.fa-briefcase::before,
+.fa-suitcase::before,
+.fa.fa-suitcase::before {
+  content: "\ea46" !important; /* ti-briefcase */
+}
+
+.fa-shopping-cart::before,
+.fa.fa-shopping-cart::before {
+  content: "\eb25" !important; /* ti-shopping-cart */
+}
+
+.fa-truck::before,
+.fa.fa-truck::before {
+  content: "\ebc4" !important; /* ti-truck */
+}
+
+.fa-industry::before,
+.fa.fa-industry::before {
+  content: "\ee1c" !important; /* ti-building-factory */
+}
+
+.fa-building-o::before,
+.fa.fa-building-o::before {
+  content: "\ea4f" !important; /* ti-building */
+}
+
+.fa-shield::before,
+.fa.fa-shield::before {
+  content: "\eb22" !important; /* ti-shield-check */
+}
+
+.fa-cube::before,
+.fa.fa-cube::before,
+.fa-cubes::before,
+.fa.fa-cubes::before {
+  content: "\ea45" !important; /* ti-box */
+}
+
+.fa-archive::before,
+.fa.fa-archive::before {
+  content: "\ea0b" !important; /* ti-archive */
+}
+
+.fa-database::before,
+.fa.fa-database::before {
+  content: "\ea88" !important; /* ti-database */
+}
+
+.fa-bullhorn::before,
+.fa.fa-bullhorn::before,
+.fa-solid.fa-bullhorn::before {
+  content: "\ed61" !important; /* ti-speakerphone */
+}
+
+.fa-globe::before,
+.fa.fa-globe::before {
+  content: "\eb54" !important; /* ti-world */
+}
+
+.fa-link::before,
+.fa.fa-link::before {
+  content: "\eade" !important; /* ti-link */
+}
+
+.fa-bolt::before,
+.fa.fa-bolt::before {
+  content: "\ea38" !important; /* ti-bolt */
+}
+
+/* ===== Files ===== */
+
+.fa-file::before,
+.fa.fa-file::before,
+.fa-file-o::before,
+.fa.fa-file-o::before {
+  content: "\eaa4" !important; /* ti-file */
+}
+
+.fa-file-text::before,
+.fa.fa-file-text::before,
+.fa-file-lines::before,
+.fa-regular.fa-file-lines::before {
+  content: "\eaa2" !important; /* ti-file-text */
+}
+
+.fa-file-invoice::before,
+.fa.fa-file-invoice::before,
+.fa-solid.fa-file-invoice::before {
+  content: "\eb67" !important; /* ti-file-invoice */
+}
+
+.fa-file-export::before,
+.fa-solid.fa-file-export::before {
+  content: "\ede9" !important; /* ti-file-export */
+}
+
+.fa-file-pdf::before,
+.fa.fa-file-pdf::before,
+.fa-file-pdf-o::before,
+.fa.fa-file-pdf-o::before,
+.fa-regular.fa-file-pdf::before {
+  content: "\fb10" !important; /* ti-file-type-pdf */
+}
+
+.fa-file-archive::before,
+.fa.fa-file-archive::before,
+.fa-file-archive-o::before,
+.fa.fa-file-archive-o::before,
+.fa-file-zipper::before,
+.fa-regular.fa-file-zipper::before {
+  content: "\ed4e" !important; /* ti-file-zip */
+}
+
+.fa-file-excel::before,
+.fa.fa-file-excel::before,
+.fa-file-excel-o::before,
+.fa.fa-file-excel-o::before,
+.fa-regular.fa-file-excel::before {
+  content: "\f03e" !important; /* ti-file-spreadsheet */
+}
+
+.fa-file-image-o::before,
+.fa.fa-file-image-o::before {
+  content: "\fb12" !important; /* ti-file-type-png */
+}
+
+.fa-file-word-o::before,
+.fa.fa-file-word-o::before {
+  content: "\eaa2" !important; /* ti-file-text */
+}
+
+.fa-folder::before,
+.fa.fa-folder::before,
+.fa-folder-o::before,
+.fa.fa-folder-o::before {
+  content: "\eaad" !important; /* ti-folder */
+}
+
+.fa-folder-open::before,
+.fa.fa-folder-open::before {
+  content: "\faf7" !important; /* ti-folder-open */
+}
+
+.fa-note-sticky::before,
+.fa.fa-note-sticky::before,
+.fa-regular.fa-note-sticky::before,
+.fa-solid.fa-note-sticky::before {
+  content: "\eb6d" !important; /* ti-note */
+}
+
+/* ===== Communication ===== */
+
+.fa-comment::before,
+.fa.fa-comment::before {
+  content: "\eaef" !important; /* ti-message */
+}
+
+.fa-comments::before,
+.fa.fa-comments::before,
+.fa-regular.fa-comments::before {
+  content: "\eb6c" !important; /* ti-messages */
+}
+
+.fa-envelope::before,
+.fa.fa-envelope::before,
+.fa-envelope-o::before,
+.fa.fa-envelope-o::before,
+.fa-regular.fa-envelope::before {
+  content: "\eae5" !important; /* ti-mail */
+}
+
+.fa-envelope-open::before,
+.fa.fa-envelope-open::before,
+.fa-regular.fa-envelope-open::before {
+  content: "\eae4" !important; /* ti-mail-opened */
+}
+
+.fa-phone-square::before,
+.fa.fa-phone-square::before,
+.fa-tty::before,
+.fa.fa-tty::before {
+  content: "\eb09" !important; /* ti-phone */
+}
+
+.fa-bell::before,
+.fa.fa-bell::before,
+.fa-regular.fa-bell::before {
+  content: "\ea35" !important; /* ti-bell */
+}
+
+.fa-share-alt::before,
+.fa.fa-share-alt::before,
+.fa-share-square-o::before,
+.fa.fa-share-square-o::before,
+.fa-regular.fa-share-from-square::before {
+  content: "\eb21" !important; /* ti-share */
+}
+
+/* ===== Users & Auth ===== */
+
+.fa-user::before,
+.fa.fa-user::before,
+.fa-regular.fa-user::before,
+.fa-solid.fa-user::before {
+  content: "\eb4d" !important; /* ti-user */
+}
+
+.fa-users::before,
+.fa.fa-users::before {
+  content: "\ebf2" !important; /* ti-users */
+}
+
+.fa-life-ring::before,
+.fa.fa-life-ring::before,
+.fa-regular.fa-life-ring::before {
+  content: "\eadd" !important; /* ti-lifebuoy */
+}
+
+.fa-mars::before,
+.fa.fa-mars::before {
+  content: "\eb4d" !important; /* ti-user (gender-neutral fallback) */
+}
+
+/* ===== Layout & UI ===== */
+
+.fa-bars::before,
+.fa.fa-bars::before,
+.fa-reorder::before,
+.fa.fa-reorder::before {
+  content: "\ec42" !important; /* ti-menu-2 */
+}
+
+.fa-th-list::before,
+.fa.fa-th-list::before,
+.fa-solid.fa-table-list::before {
+  content: "\eb6b" !important; /* ti-list */
+}
+
+.fa-table::before,
+.fa.fa-table::before {
+  content: "\eba1" !important; /* ti-table */
+}
+
+.fa-tasks::before,
+.fa.fa-tasks::before {
+  content: "\f074" !important; /* ti-checklist */
+}
+
+.fa-expand::before,
+.fa.fa-expand::before {
+  content: "\ea28" !important; /* ti-arrows-maximize */
+}
+
+.fa-spinner::before,
+.fa.fa-spinner::before,
+.fa-circle-notch::before,
+.fa.fa-circle-notch::before,
+.fa-solid.fa-circle-notch::before {
+  content: "\eca3" !important; /* ti-loader */
+}
+
+.fa-cog::before,
+.fa.fa-cog::before,
+.fa-gear::before,
+.fa.fa-gear::before,
+.fa-cogs::before,
+.fa.fa-cogs::before,
+.fa-gears::before,
+.fa.fa-gears::before {
+  content: "\eb20" !important; /* ti-settings */
+}
+
+.fa-wrench::before,
+.fa.fa-wrench::before,
+.fa-solid.fa-wrench::before {
+  content: "\eb40" !important; /* ti-tool */
+}
+
+.fa-code::before,
+.fa.fa-code::before,
+.fa-solid.fa-code::before {
+  content: "\ea77" !important; /* ti-code */
+}
+
+.fa-hammer::before,
+.fa.fa-hammer::before,
+.fa-solid.fa-hammer::before {
+  content: "\ef91" !important; /* ti-hammer */
+}
+
+.fa-robot::before,
+.fa.fa-robot::before,
+.fa-solid.fa-robot::before {
+  content: "\f00b" !important; /* ti-robot */
+}
+
+.fa-gavel::before,
+.fa.fa-gavel::before,
+.fa-solid.fa-gavel::before {
+  content: "\ef90" !important; /* ti-gavel */
+}
+
+.fa-grip-vertical::before,
+.fa-solid.fa-grip-vertical::before {
+  content: "\ec01" !important; /* ti-grip-vertical */
+}
+
+.fa-grip-lines-vertical::before,
+.fa-solid.fa-grip-lines-vertical::before {
+  content: "\ec00" !important; /* ti-grip-horizontal */
+}
+
+.fa-chart-bar::before,
+.fa.fa-chart-bar::before,
+.fa-bar-chart::before,
+.fa.fa-bar-chart::before,
+.fa-solid.fa-chart-gantt::before {
+  content: "\ea59" !important; /* ti-chart-bar */
+}
+
+.fa-line-chart::before,
+.fa.fa-line-chart::before {
+  content: "\ea5c" !important; /* ti-chart-line */
+}
+
+.fa-align-left::before,
+.fa.fa-align-left::before {
+  content: "\ea09" !important; /* ti-align-left */
+}
+
+.fa-toggle-on::before,
+.fa.fa-toggle-on::before {
+  content: "\eb3f" !important; /* ti-toggle-right */
+}
+
+.fa-toggle-off::before,
+.fa.fa-toggle-off::before {
+  content: "\eb3e" !important; /* ti-toggle-left */
+}
+
+.fa-window-maximize::before,
+.fa.fa-window-maximize::before {
+  content: "\ef06" !important; /* ti-window */
+}
+
+.fa-sliders::before,
+.fa.fa-sliders::before {
+  content: "\ea03" !important; /* ti-adjustments */
+}
+
+.fa-asterisk::before,
+.fa.fa-asterisk::before {
+  content: "\efd5" !important; /* ti-asterisk */
+}
+
+/* ===== Misc ===== */
+
+.fa-smile-o::before,
+.fa.fa-smile-o::before {
+  content: "\eaf7" !important; /* ti-mood-smile */
+}
+
+.fa-moon::before,
+.fa.fa-moon::before,
+.fa-moon-o::before,
+.fa.fa-moon-o::before,
+.fa-regular.fa-moon::before {
+  content: "\eaf8" !important; /* ti-moon */
+}
+
+.fa-sun::before,
+.fa.fa-sun::before,
+.fa-sun-o::before,
+.fa.fa-sun-o::before,
+.fa-regular.fa-sun::before {
+  content: "\eb30" !important; /* ti-sun */
+}
+
+.fa-dropbox::before,
+.fa.fa-dropbox::before {
+  content: "\1018a" !important; /* ti-brand-dropbox */
+}
+
+.fa-bed::before,
+.fa.fa-bed::before {
+  content: "\eb5c" !important; /* ti-bed */
+}
+
+/* ===== Additional mappings (batch 2) ===== */
+
+.fa-address-card::before,
+.fa.fa-address-card::before {
+  content: "\f021" !important; /* ti-address-book */
+}
+
+.fa-area-chart::before,
+.fa.fa-area-chart::before {
+  content: "\ea58" !important; /* ti-chart-area */
+}
+
+.fa-balance-scale::before,
+.fa.fa-balance-scale::before {
+  content: "\ebc2" !important; /* ti-scale */
+}
+
+.fa-bars-progress::before,
+.fa.fa-bars-progress::before {
+  content: "\fa0d" !important; /* ti-progress */
+}
+
+.fa-bars-staggered::before,
+.fa.fa-bars-staggered::before {
+  content: "\ef40" !important; /* ti-list-details */
+}
+
+.fa-building::before,
+.fa.fa-building::before {
+  content: "\ea4f" !important; /* ti-building */
+}
+
+.fa-chart-line::before,
+.fa.fa-chart-line::before {
+  content: "\ea5c" !important; /* ti-chart-line */
+}
+
+.fa-circle-dot::before,
+.fa.fa-circle-dot::before {
+  content: "\efb1" !important; /* ti-circle-dot */
+}
+
+.fa-circle-info::before,
+.fa.fa-circle-info::before {
+  content: "\eac5" !important; /* ti-info-circle */
+}
+
+.fa-crosshairs::before,
+.fa.fa-crosshairs::before {
+  content: "\ec3e" !important; /* ti-crosshair */
+}
+
+.fa-file-contract::before,
+.fa.fa-file-contract::before {
+  content: "\eaa2" !important; /* ti-file-text */
+}
+
+.fa-file-powerpoint::before,
+.fa.fa-file-powerpoint::before,
+.fa-file-powerpoint-o::before,
+.fa.fa-file-powerpoint-o::before {
+  content: "\fb13" !important; /* ti-file-type-ppt */
+}
+
+.fa-heart::before,
+.fa.fa-heart::before {
+  content: "\eabe" !important; /* ti-heart */
+}
+
+.fa-heartbeat::before,
+.fa.fa-heartbeat::before {
+  content: "\ef92" !important; /* ti-heartbeat */
+}
+
+.fa-location-dot::before,
+.fa.fa-location-dot::before {
+  content: "\eae8" !important; /* ti-map-pin */
+}
+
+.fa-message::before,
+.fa.fa-message::before {
+  content: "\eaef" !important; /* ti-message */
+}
+
+.fa-microchip::before,
+.fa.fa-microchip::before {
+  content: "\ef8e" !important; /* ti-cpu */
+}
+
+.fa-object-group::before,
+.fa.fa-object-group::before {
+  content: "\eac9" !important; /* ti-layers-intersect */
+}
+
+.fa-rocket::before,
+.fa.fa-rocket::before {
+  content: "\ec45" !important; /* ti-rocket */
+}
+
+.fa-shield-halved::before,
+.fa.fa-shield-halved::before {
+  content: "\eb22" !important; /* ti-shield-check */
+}
+
+.fa-signature::before,
+.fa.fa-signature::before {
+  content: "\eee0" !important; /* ti-signature */
+}
+
+.fa-tachometer::before,
+.fa.fa-tachometer::before {
+  content: "\eab1" !important; /* ti-gauge */
+}
+
+.fa-th::before,
+.fa.fa-th::before {
+  content: "\edba" !important; /* ti-layout-grid */
+}
+
+.fa-thumbs-o-up::before,
+.fa.fa-thumbs-o-up::before {
+  content: "\eb3c" !important; /* ti-thumb-up */
+}
+
+.fa-ticket::before,
+.fa.fa-ticket::before {
+  content: "\eb3d" !important; /* ti-ticket */
+}
+
+.fa-user-circle::before,
+.fa.fa-user-circle::before {
+  content: "\ef68" !important; /* ti-user-circle */
+}
+
+/* ===== Additional mappings (batch 3 — comprehensive sweep) ===== */
+
+.fa-graduation-cap::before,
+.fa.fa-graduation-cap::before {
+  content: "\ecf7" !important; /* ti-school */
+}
+
+.fa-list-alt::before,
+.fa.fa-list-alt::before {
+  content: "\ef40" !important; /* ti-list-details */
+}
+
+.fa-usd::before,
+.fa.fa-usd::before {
+  content: "\eb84" !important; /* ti-currency-dollar */
+}
+
+.fa-clipboard::before,
+.fa.fa-clipboard::before {
+  content: "\ea6f" !important; /* ti-clipboard */
+}
+
+.fa-cart-plus::before,
+.fa.fa-cart-plus::before {
+  content: "\fb65" !important; /* ti-shopping-cart-plus */
+}
+
+.fa-inbox::before,
+.fa.fa-inbox::before {
+  content: "\eac4" !important; /* ti-inbox */
+}
+
+.fa-indent::before,
+.fa.fa-indent::before {
+  content: "\eb92" !important; /* ti-indent-increase */
+}
+
+.fa-columns::before,
+.fa.fa-columns::before {
+  content: "\eb83" !important; /* ti-columns */
+}
+
+.fa-clone::before,
+.fa.fa-clone::before {
+  content: "\ea7a" !important; /* ti-copy */
+}
+
+.fa-adjust::before,
+.fa.fa-adjust::before {
+  content: "\eb30" !important; /* ti-sun */
+}
+
+.fa-align-justify::before,
+.fa.fa-align-justify::before {
+  content: "\ea08" !important; /* ti-align-justified */
+}
+
+.fa-box::before,
+.fa.fa-box::before,
+.fa-box-open::before,
+.fa-solid.fa-box-open::before {
+  content: "\ea45" !important; /* ti-box */
+}
+
+.fa-snowflake::before,
+.fa.fa-snowflake::before {
+  content: "\ec0b" !important; /* ti-snowflake */
+}
+
+.fa-rss::before,
+.fa.fa-rss::before,
+.fa-rss-square::before,
+.fa.fa-rss-square::before {
+  content: "\eb19" !important; /* ti-rss */
+}
+
+.fa-outdent::before,
+.fa.fa-outdent::before {
+  content: "\eb91" !important; /* ti-indent-decrease */
+}
+
+.fa-reply-all::before,
+.fa.fa-reply-all::before {
+  content: "\ea0c" !important; /* ti-arrow-back */
+}
+
+.fa-list-ol::before,
+.fa.fa-list-ol::before {
+  content: "\ef11" !important; /* ti-list-numbers */
+}
+
+.fa-book::before,
+.fa.fa-book::before {
+  content: "\ea39" !important; /* ti-book */
+}
+
+.fa-exchange::before,
+.fa.fa-exchange::before {
+  content: "\ebe7" !important; /* ti-exchange */
+}
+
+.fa-newspaper::before,
+.fa.fa-newspaper::before {
+  content: "\eafd" !important; /* ti-news */
+}
+
+.fa-shopping-basket::before,
+.fa.fa-shopping-basket::before {
+  content: "\ebe1" !important; /* ti-basket */
+}
+
+.fa-university::before,
+.fa.fa-university::before {
+  content: "\ebe2" !important; /* ti-building-bank */
+}
+
+.fa-object-ungroup::before,
+.fa.fa-object-ungroup::before {
+  content: "\eacb" !important; /* ti-layers-union */
+}
+
+.fa-boxes-stacked::before,
+.fa-solid.fa-boxes-stacked::before {
+  content: "\eb2d" !important; /* ti-stack */
+}
+
+.fa-receipt::before,
+.fa-solid.fa-receipt::before {
+  content: "\edfd" !important; /* ti-receipt */
+}
+
+.fa-first-order::before,
+.fa-brands.fa-first-order::before {
+  content: "\eb25" !important; /* ti-shopping-cart (brand fallback) */
+}
+
+.fa-map-pin::before,
+.fa.fa-map-pin::before {
+  content: "\eae8" !important; /* ti-map-pin */
+}
+
+.fa-file-pen::before,
+.fa-solid.fa-file-pen::before {
+  content: "\f039" !important; /* ti-file-pencil */
+}
+
+.fa-flask::before,
+.fa-solid.fa-flask::before {
+  content: "\ebd2" !important; /* ti-flask */
+}
+
+.fa-microscope::before,
+.fa-solid.fa-microscope::before {
+  content: "\ef64" !important; /* ti-microscope */
+}
+
+.fa-file-shield::before,
+.fa-solid.fa-file-shield::before {
+  content: "\ed4d" !important; /* ti-file-certificate */
+}
+
+.fa-check-double::before,
+.fa-solid.fa-check-double::before {
+  content: "\ebaa" !important; /* ti-checks */
+}
+
+.fa-user-times::before,
+.fa.fa-user-times::before {
+  content: "\eb4c" !important; /* ti-user-x */
+}
+
+/* ===== Brands ===== */
+
+.fa-facebook-f::before,
+.fa-brands.fa-facebook-f::before {
+  content: "\ec1a" !important; /* ti-brand-facebook */
+}
+
+.fa-google::before,
+.fa-brands.fa-google::before {
+  content: "\ec1f" !important; /* ti-brand-google */
+}
+
+.fa-linkedin-in::before,
+.fa-brands.fa-linkedin-in::before {
+  content: "\ec8c" !important; /* ti-brand-linkedin */
+}
+
+.fa-skype::before,
+.fa-brands.fa-skype::before {
+  content: "\ed02" !important; /* ti-brand-skype */
+}
+
+.fa-stripe::before,
+.fa-brands.fa-stripe::before {
+  content: "\ea84" !important; /* ti-credit-card (generic brand fallback) */
+}
+
+.fa-keycdn::before,
+.fa.fa-keycdn::before {
+  content: "\ea76" !important; /* ti-cloud (brand fallback) */
+}
+
+.fa-deviantart::before,
+.fa.fa-deviantart::before {
+  content: "\ecfb" !important; /* ti-brand-deviantart */
+}
+
+/* ===== Batch 4 — comprehensive gap fill ===== */
+/* Added 2026-07-01: covers all remaining FA icon classes found across views/modules */
+
+/* Navigation & UI */
+.fa-arrow-left::before,
+.fa.fa-arrow-left::before {
+  content: "\ea19" !important; /* ti-arrow-left */
+}
+
+.fa-history::before,
+.fa.fa-history::before,
+.fa-solid.fa-history::before {
+  content: "\ebea" !important; /* ti-history */
+}
+
+.fa-chevron-circle-left::before,
+.fa.fa-chevron-circle-left::before {
+  content: "\ea60" !important; /* ti-chevron-left */
+}
+
+.fa-chevron-circle-right::before,
+.fa.fa-chevron-circle-right::before {
+  content: "\ea61" !important; /* ti-chevron-right */
+}
+
+.fa-list::before,
+.fa.fa-list::before {
+  content: "\eb6b" !important; /* ti-list */
+}
+
+.fa-th-large::before,
+.fa.fa-th-large::before {
+  content: "\edba" !important; /* ti-layout-grid */
+}
+
+.fa-sitemap::before,
+.fa.fa-sitemap::before {
+  content: "\eb9d" !important; /* ti-sitemap */
+}
+
+.fa-signal::before,
+.fa.fa-signal::before {
+  content: "\f1f0" !important; /* ti-signal-5g */
+}
+
+/* Actions */
+.fa-minus::before,
+.fa.fa-minus::before,
+.fa-solid.fa-minus::before {
+  content: "\eaf2" !important; /* ti-minus */
+}
+
+.fa-exclamation-circle::before,
+.fa.fa-exclamation-circle::before {
+  content: "\ea05" !important; /* ti-alert-circle */
+}
+
+.fa-share::before,
+.fa.fa-share::before {
+  content: "\eb21" !important; /* ti-share */
+}
+
+.fa-copy::before,
+.fa.fa-copy::before,
+.fa-regular.fa-copy::before {
+  content: "\ea7a" !important; /* ti-copy */
+}
+
+.fa-magic::before,
+.fa.fa-magic::before {
+  content: "\ebcb" !important; /* ti-wand */
+}
+
+.fa-hand-o-right::before,
+.fa.fa-hand-o-right::before {
+  content: "\ea1f" !important; /* ti-arrow-right */
+}
+
+.fa-eye-slash::before,
+.fa.fa-eye-slash::before {
+  content: "\ecf0" !important; /* ti-eye-off */
+}
+
+.fa-cloud-download::before,
+.fa.fa-cloud-download::before {
+  content: "\ea71" !important; /* ti-cloud-download */
+}
+
+.fa-barcode::before,
+.fa.fa-barcode::before {
+  content: "\ebc6" !important; /* ti-barcode */
+}
+
+.fa-calculator::before,
+.fa.fa-calculator::before {
+  content: "\eb80" !important; /* ti-calculator */
+}
+
+/* Files */
+.fa-file-text-o::before,
+.fa.fa-file-text-o::before {
+  content: "\eaa2" !important; /* ti-file-text */
+}
+
+.fa-file-invoice-dollar::before,
+.fa-solid.fa-file-invoice-dollar::before {
+  content: "\eb67" !important; /* ti-file-invoice */
+}
+
+.fa-sticky-note::before,
+.fa.fa-sticky-note::before {
+  content: "\eb6d" !important; /* ti-note */
+}
+
+/* Communication */
+.fa-commenting-o::before,
+.fa.fa-commenting-o::before {
+  content: "\eaef" !important; /* ti-message */
+}
+
+.fa-envelopes-bulk::before,
+.fa.fa-envelopes-bulk::before {
+  content: "\eae5" !important; /* ti-mail */
+}
+
+.fa-phone::before,
+.fa.fa-phone::before {
+  content: "\eb09" !important; /* ti-phone */
+}
+
+.fa-bell-o::before,
+.fa.fa-bell-o::before {
+  content: "\ea35" !important; /* ti-bell */
+}
+
+/* Users */
+.fa-user-o::before,
+.fa.fa-user-o::before {
+  content: "\eb4d" !important; /* ti-user */
+}
+
+.fa-group::before,
+.fa.fa-group::before {
+  content: "\ebf2" !important; /* ti-users */
+}
+
+.fa-people-group::before,
+.fa.fa-people-group::before {
+  content: "\fa21" !important; /* ti-users-group */
+}
+
+.fa-intersex::before,
+.fa.fa-intersex::before {
+  content: "\eb4d" !important; /* ti-user (gender-neutral fallback) */
+}
+
+.fa-address-card-o::before,
+.fa.fa-address-card-o::before {
+  content: "\f021" !important; /* ti-address-book */
+}
+
+/* Business */
+.fa-warehouse::before,
+.fa.fa-warehouse::before {
+  content: "\ebe3" !important; /* ti-building-warehouse */
+}
+
+.fa-bullseye::before,
+.fa.fa-bullseye::before {
+  content: "\eb35" !important; /* ti-target */
+}
+
+.fa-money-bill::before,
+.fa.fa-money-bill::before {
+  content: "\eb84" !important; /* ti-currency-dollar */
+}
+
+.fa-coins::before,
+.fa.fa-coins::before {
+  content: "\f65d" !important; /* ti-coins */
+}
+
+.fa-certificate::before,
+.fa.fa-certificate::before {
+  content: "\ed76" !important; /* ti-certificate */
+}
+
+.fa-shirtsinbulk::before,
+.fa.fa-shirtsinbulk::before {
+  content: "\ec0a" !important; /* ti-shirt */
+}
+
+.fa-car::before,
+.fa.fa-car::before {
+  content: "\ebbb" !important; /* ti-car */
+}
+
+.fa-cart-arrow-down::before,
+.fa.fa-cart-arrow-down::before {
+  content: "\fb5f" !important; /* ti-shopping-cart-down */
+}
+
+/* Charts & Data */
+.fa-pie-chart::before,
+.fa.fa-pie-chart::before {
+  content: "\ea5d" !important; /* ti-chart-pie */
+}
+
+.fa-sort-amount::before,
+.fa.fa-sort-amount::before {
+  content: "\eb26" !important; /* ti-sort-ascending */
+}
+
+/* Media */
+.fa-play-circle-o::before,
+.fa.fa-play-circle-o::before {
+  content: "\ed46" !important; /* ti-player-play */
+}
+
+.fa-snowflake-o::before,
+.fa.fa-snowflake-o::before {
+  content: "\ec0b" !important; /* ti-snowflake */
+}
+
+/* Calendar */
+.fa-calendar-check::before,
+.fa.fa-calendar-check::before {
+  content: "\f824" !important; /* ti-calendar-check */
+}
+
+/* Code & Dev */
+.fa-code-fork::before,
+.fa.fa-code-fork::before {
+  content: "\eb8f" !important; /* ti-git-fork */
+}
+
+/* Brand variants */
+.fa-linkedin::before,
+.fa.fa-linkedin::before {
+  content: "\ec8c" !important; /* ti-brand-linkedin */
+}
+
+.fa-facebook::before,
+.fa.fa-facebook::before {
+  content: "\ec1a" !important; /* ti-brand-facebook */
+}
+
+.fa-slideshare::before,
+.fa.fa-slideshare::before {
+  content: "\eb21" !important; /* ti-share (generic brand fallback) */
+}
+
+/* ── FA utility classes (not from Tabler) ────────────────────── */
+
+/* Fixed-width: match FA .fa-fw behavior */
+.fa-fw {
+  width: 1.25em;
+  text-align: center;
+}
+
+/* Pulsing animation: match FA .fa-pulse behavior */
+.fa-pulse::before {
+  display: inline-block;
+  animation: fennec-icon-pulse 2s ease-in-out infinite;
+}
+
+/* ── Spinning animations ──────────────────────────────────────── */
+
+.fa-spin::before {
+  display: inline-block;
+  animation: fennec-icon-spin 2s linear infinite;
+}
+
+@keyframes fennec-icon-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fennec-icon-pulse {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* ── Sidebar nav arrow (CSS triangle restoration) ─────────────── */
+
+/*
+ * style.css defines .sidebar .fa.arrow:before with Font Awesome codepoints.
+ * Our font-family override breaks it.  Restore proper Tabler chevron.
+ */
+.sidebar .fa.arrow:before {
+  font-family: 'tabler-icons' !important;
+  content: "\ea60" !important; /* ti-chevron-left */
+}
+
+.sidebar .active>a>.fa.arrow:before {
+  font-family: 'tabler-icons' !important;
+  content: "\ea5f" !important; /* ti-chevron-down */
+}
+
+/* ── Sidebar menu icon design tokens ──────────────────────────── */
+
+.sidebar ul.nav li a i,
+.sidebar ul.nav li a .fa,
+.sidebar ul.nav li a .menu-icon {
+  font-size: 1.15rem;
+  width: 1.35rem;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+/* Light mode — sidebar bg is white, icons are muted dark */
+.sidebar ul.nav li a i,
+.sidebar ul.nav li a .fa {
+  color: var(--text-muted, #6c757d);
+}
+
+.sidebar ul.nav li a:hover i,
+.sidebar ul.nav li a:hover .fa {
+  color: #1a1a2e;
+}
+
+.sidebar ul.nav li.active a i,
+.sidebar ul.nav li.active a .fa,
+.sidebar ul.nav li a.active i,
+.sidebar ul.nav li a.active .fa {
+  color: #F9BC3B;
+}
+
+/* Dark mode — sidebar bg is dark, icons are light */
+html[data-bs-theme="dark"] .sidebar ul.nav li a i,
+html[data-bs-theme="dark"] .sidebar ul.nav li a .fa {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+html[data-bs-theme="dark"] .sidebar ul.nav li a:hover i,
+html[data-bs-theme="dark"] .sidebar ul.nav li a:hover .fa {
+  color: #ffffff;
+}
+
+html[data-bs-theme="dark"] .sidebar ul.nav li.active a i,
+html[data-bs-theme="dark"] .sidebar ul.nav li.active a .fa,
+html[data-bs-theme="dark"] .sidebar ul.nav li a.active i,
+html[data-bs-theme="dark"] .sidebar ul.nav li a.active .fa {
+  color: #F9BC3B;
+}

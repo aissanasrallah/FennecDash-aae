@@ -1,0 +1,7 @@
+{
+  "name": "FennecDash",
+  "url": "https://mcp.example.com/mcp",
+  "transport": "streamable-http",
+  "authentication": "oauth2",
+  "note": "ChatGPT web does not accept a static FennecDash bearer token. Put an OAuth-capable gateway in front of fennedash-mcp; the gateway injects the FennecDash bearer token upstream."
+}

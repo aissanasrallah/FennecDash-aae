@@ -1,0 +1,47 @@
+.sm-portal-a-cancelled{
+	border: 4px solid red;
+	font-weight: 700;
+	background: #d71a1a;
+}
+.sm-portal-a-cancelled h4 { color: var(--v-danger, #EA5455); }
+.sm-portal-a-cancelled span { color: var(--v-warning, #FF9F43); }
+
+.sm-portal-a-renewal h4 { color: var(--v-info, #00CFE8); }
+.sm-portal-a-renewal span { color: #0284c7; }
+
+.sm-portal-a-expired h4 { color: var(--v-warning, #FF9F43); }
+.sm-portal-a-expired span { color: #d97706; }
+
+.sm-portal-a-complete h4 { color: var(--v-success, #28C76F); }
+.sm-portal-a-complete span { color: #16a34a; }
+
+.sm-portal-a-pause h4 { color: #a78bfa; }
+.sm-portal-a-pause span { color: #7c3aed; }
+
+.sm-portal-a-activate h4 { color: #94a3b8; }
+.sm-portal-a-activate span { color: #64748b; }
+
+.sm-portal-span-cancelled{
+	font-size: 17px;
+}
+
+.sm-portal-a-renewal{
+	border: 4px solid #2196f3; font-weight: 700; background: #2196f3;
+}
+
+.sm-portal-a-expired{
+	border: 4px solid #ffa500; font-weight: 700; background: #ffa500;
+}
+
+.sm-portal-a-pause{
+	border: 4px solid #3db8da; font-weight: 700; background: #3db8da;
+}
+
+.sm-portal-a-activate{
+	border: 4px solid #4caf50; font-weight: 700; background: #4caf50;
+}
+
+.sm-portal-a-complete{
+	border: 4px solid #84c529; font-weight: 700; background: #84c529;
+}
+
