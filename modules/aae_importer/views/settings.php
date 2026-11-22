@@ -8,6 +8,7 @@
         <h4 class="no-margin display-block" style="font-size:18px;"><i class="fa fa-cog"></i> <?php echo _l('aae_settings'); ?></h4>
         <div style="margin-top:10px;">
             <a href="<?php echo admin_url('aae_importer/catalogue'); ?>" class="btn btn-default"><i class="fa fa-car"></i> <?php echo _l('aae_menu_catalogue'); ?></a>
+            <a href="<?php echo admin_url('aae_importer/sync_prices'); ?>" class="btn btn-success" style="background-color:#16a34a;border-color:#16a34a;color:#fff;margin-left:8px;"><i class="fa fa-refresh"></i> Synchroniser les prix vers le site</a>
         </div>
     </div>
 </div>

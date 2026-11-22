@@ -150,11 +150,19 @@ function aae_init_menu_items()
 
     if (is_admin()) {
         $CI->app_menu->add_sidebar_children_item('aae', [
+            'slug'     => 'aae-sync-prices',
+            'name'     => 'Synchroniser les prix',
+            'icon'     => 'fa-solid fa-rotate',
+            'href'     => admin_url('aae/sync_prices'),
+            'position' => 4,
+        ]);
+
+        $CI->app_menu->add_sidebar_children_item('aae', [
             'slug'     => 'aae-settings',
             'name'     => _l('aae_settings'),
             'icon'     => 'fa-solid fa-sliders',
             'href'     => admin_url('aae/settings'),
-            'position' => 4,
+            'position' => 5,
         ]);
     }
 }

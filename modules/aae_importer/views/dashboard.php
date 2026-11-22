@@ -71,6 +71,7 @@
             <div class="panel-body">
                 <a href="<?php echo admin_url('aae_importer/operations?view=kanban'); ?>" class="btn btn-primary btn-block"><i class="fa fa-ship"></i> <?php echo _l('aae_menu_operations'); ?></a>
                 <a href="<?php echo admin_url('aae_importer/catalogue'); ?>" class="btn btn-default btn-block" style="margin-top:8px;"><i class="fa fa-car"></i> <?php echo _l('aae_menu_catalogue'); ?></a>
+                <a href="<?php echo admin_url('aae_importer/sync_prices'); ?>" class="btn btn-success btn-block" style="margin-top:8px;background-color:#16a34a;border-color:#16a34a;color:#fff;"><i class="fa fa-refresh"></i> Synchroniser les prix vers le site</a>
             </div>
         </div>
     </div>

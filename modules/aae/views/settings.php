@@ -41,6 +41,10 @@ $sample         = aae_calculate_prices([
                 <p class="aae-page-subtitle"><?php echo _l('aae_settings_subtitle'); ?></p>
             </div>
             <div class="aae-page-actions">
+                <a href="<?php echo admin_url('aae/sync_prices'); ?>" class="btn btn-success" style="background-color:#16a34a;border-color:#16a34a;color:#fff;">
+                    <i class="fa-solid fa-rotate tw-mr-1"></i>
+                    Synchroniser les prix vers le site
+                </a>
                 <a href="<?php echo admin_url('aae'); ?>" class="btn btn-default"><?php echo _l('aae_cancel'); ?></a>
                 <button type="submit" class="btn btn-primary">
                     <i class="fa-regular fa-floppy-disk tw-mr-1"></i>

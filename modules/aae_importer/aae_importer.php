@@ -97,6 +97,14 @@ function aae_importer_admin_init()
     ]);
 
     $CI->app_menu->add_sidebar_children_item('aae_importer', [
+        'slug'     => 'aae_importer_sync_prices',
+        'name'     => 'Synchroniser les prix',
+        'href'     => admin_url('aae_importer/sync_prices'),
+        'position' => 12,
+        'icon'     => 'fa fa-refresh',
+    ]);
+
+    $CI->app_menu->add_sidebar_children_item('aae_importer', [
         'slug'     => 'aae_importer_operations',
         'name'     => _l('aae_menu_operations'),
         'href'     => admin_url('aae_importer/operations'),
