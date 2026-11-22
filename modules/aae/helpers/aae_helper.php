@@ -593,7 +593,10 @@ function aae_fetch_storefront_cars()
         return $cached;
     }
 
-    $url = getenv('AAE_STOREFRONT_CAR_LINKS_URL') ?: 'http://localhost/algerie-autoexport/aae/car-links';
+    $defaultLinksUrl = (defined('APP_BASE_URL') && strpos(APP_BASE_URL, 'localhost') === false)
+        ? 'https://algerie-autoexport.com/aae/car-links'
+        : 'http://localhost/algerie-autoexport/aae/car-links';
+    $url = getenv('AAE_STOREFRONT_CAR_LINKS_URL') ?: $defaultLinksUrl;
     $ch = curl_init($url);
     curl_setopt_array($ch, [
         CURLOPT_RETURNTRANSFER => true,
@@ -680,7 +683,10 @@ function aae_sync_storefront_price($brand, $model, $price)
         return false;
     }
 
-    $url = getenv('AAE_STOREFRONT_PRICE_SYNC_URL') ?: 'http://localhost/algerie-autoexport/aae/sync-car-price';
+    $defaultSyncUrl = (defined('APP_BASE_URL') && strpos(APP_BASE_URL, 'localhost') === false)
+        ? 'https://algerie-autoexport.com/aae/sync-car-price'
+        : 'http://localhost/algerie-autoexport/aae/sync-car-price';
+    $url = getenv('AAE_STOREFRONT_PRICE_SYNC_URL') ?: $defaultSyncUrl;
     $secret = getenv('AAE_WEBHOOK_SECRET') ?: 'aae-fennec-dash-2026';
 
     $ch = curl_init($url);

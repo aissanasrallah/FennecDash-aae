@@ -254,7 +254,10 @@ class Aae_importer_model extends CI_Model
      */
     public function sync_price_to_storefront($vehicle)
     {
-        $url = getenv('AAE_STOREFRONT_PRICE_SYNC_URL') ?: 'http://localhost/algerie-autoexport/aae/sync-car-price';
+        $defaultSyncUrl = (defined('APP_BASE_URL') && strpos(APP_BASE_URL, 'localhost') === false)
+            ? 'https://algerie-autoexport.com/aae/sync-car-price'
+            : 'http://localhost/algerie-autoexport/aae/sync-car-price';
+        $url = getenv('AAE_STOREFRONT_PRICE_SYNC_URL') ?: $defaultSyncUrl;
         $secret = getenv('AAE_WEBHOOK_SECRET') ?: 'aae-fennec-dash-2026';
 
         $price = (float) ($vehicle->total_ttc_eur ?? 0);

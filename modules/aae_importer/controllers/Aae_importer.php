@@ -596,7 +596,10 @@ class Aae_importer extends AdminController
     /** Récupère la liste des véhicules publiés sur Algérie Auto Export avec leur URL exacte */
     protected function fetch_storefront_cars(): array
     {
-        $url = getenv('AAE_STOREFRONT_CAR_LINKS_URL') ?: 'http://localhost/algerie-autoexport/aae/car-links';
+        $defaultLinksUrl = (defined('APP_BASE_URL') && strpos(APP_BASE_URL, 'localhost') === false)
+            ? 'https://algerie-autoexport.com/aae/car-links'
+            : 'http://localhost/algerie-autoexport/aae/car-links';
+        $url = getenv('AAE_STOREFRONT_CAR_LINKS_URL') ?: $defaultLinksUrl;
         $ch = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
