@@ -26,6 +26,10 @@
                             <i class="fa-solid fa-file-export tw-mr-1"></i>
                             <?php echo _l('aae_export_csv'); ?>
                         </a>
+                        <a href="<?php echo admin_url('aae/sync_prices'); ?>" class="btn btn-success" style="background-color:#16a34a;border-color:#16a34a;color:#fff;">
+                            <i class="fa-solid fa-rotate tw-mr-1"></i>
+                            Synchroniser les prix vers le site
+                        </a>
                         <?php if (is_admin()) { ?>
                         <a href="<?php echo admin_url('aae/settings'); ?>" class="btn btn-default" title="<?php echo _l('aae_settings'); ?>">
                             <i class="fa-solid fa-sliders"></i>

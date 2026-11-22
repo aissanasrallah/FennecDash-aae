@@ -14,6 +14,7 @@ init_head(); ?>
             <?php } ?>
             <a href="<?php echo admin_url('aae_importer/import_csv'); ?>" class="btn btn-default"><i class="fa fa-file-excel-o"></i> <?php echo _l('aae_import_csv'); ?></a>
             <a href="<?php echo admin_url('aae_importer/export_csv'); ?>" class="btn btn-default"><i class="fa fa-download"></i> <?php echo _l('aae_export_csv'); ?></a>
+            <a href="<?php echo admin_url('aae_importer/sync_prices'); ?>" class="btn btn-success" style="background-color:#16a34a;border-color:#16a34a;color:#fff;"><i class="fa fa-refresh"></i> Synchroniser les prix vers le site</a>
         </div>
     </div>
 </div>

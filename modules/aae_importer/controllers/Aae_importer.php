@@ -202,6 +202,61 @@ class Aae_importer extends AdminController
         redirect(admin_url('aae_importer/catalogue'));
     }
 
+    public function sync_prices()
+    {
+        if (!staff_can('view', 'aae_importer')) {
+            access_denied('aae_importer');
+        }
+
+        $vehicles = $this->aae_model->get_vehicles('', '', '', null, 0, 'id', 'asc');
+        $items = [];
+        foreach ($vehicles as $v) {
+            $price = (float) ($v['total_ttc_eur'] ?? 0);
+            if ($price <= 0) {
+                $price = (float) ($v['price_eur'] ?? 0);
+            }
+            if ($price > 0 && !empty($v['modele'])) {
+                $items[] = [
+                    'brand' => (string) ($v['marque'] ?? ''),
+                    'model' => (string) $v['modele'],
+                    'sale_price' => $price,
+                ];
+            }
+        }
+
+        $defaultSyncUrl = (defined('APP_BASE_URL') && strpos(APP_BASE_URL, 'localhost') === false)
+            ? 'https://algerie-autoexport.com/aae/sync-car-price'
+            : 'http://localhost/algerie-autoexport/aae/sync-car-price';
+        $url = getenv('AAE_STOREFRONT_PRICE_SYNC_URL') ?: $defaultSyncUrl;
+        $secret = getenv('AAE_WEBHOOK_SECRET') ?: 'aae-fennec-dash-2026';
+
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_POST => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 12,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json',
+                'Accept: application/json',
+                'X-AAE-Webhook-Secret: ' . $secret,
+            ],
+            CURLOPT_POSTFIELDS => json_encode(['items' => $items]),
+        ]);
+        $raw = curl_exec($ch);
+        $code = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        $decoded = is_string($raw) ? json_decode($raw, true) : null;
+        if ($code >= 200 && $code < 300 && is_array($decoded) && !empty($decoded['success'])) {
+            $count = (int) ($decoded['updated'] ?? 0);
+            set_alert('success', 'Prix synchronisés avec succès vers le site Algérie Auto Export (' . $count . ' véhicule(s) mis à jour).');
+        } else {
+            set_alert('warning', 'La synchronisation des prix avec le site a échoué (HTTP ' . $code . ').');
+        }
+
+        redirect(admin_url('aae_importer/catalogue'));
+    }
+
     public function vehicle_delete()
     {
         if (!staff_can('delete', 'aae_importer')) {
